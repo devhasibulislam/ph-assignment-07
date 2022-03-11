@@ -150,6 +150,7 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
+  // remove dublicate liked cart
   document.getElementById("liked").textContent = "";
 
   likedPosts.forEach((post) => {
@@ -160,7 +161,7 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  // remove dublicate reported cart
+  // remove dublicate reported cart item
   document.getElementById("reported").textContent = "";
   reportedPosts.forEach((post) => {
     const div = createPost(post);
