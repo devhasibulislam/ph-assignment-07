@@ -122,9 +122,9 @@ const createPost = (post) => {
                   <div class="post__description">
                     <small>
                       <a class="post__name--underline" href="#">
-                          ${post.comments?.user}
+                          ${post.comments[0]?.user}
                       </a>
-                      ${post.comments?.text}
+                      ${post.comments[0]?.text}
                     </small>
                   </div>
                   <span class="post__date-time">30 minutes ago</span>
@@ -146,6 +146,8 @@ const showPosts = (posts) => {
 
 const displayLikedPosts = () => {
   const likedPosts = getLikedPosts();
+  document.getElementById("liked").textContent = "";
+
   likedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("liked").appendChild(div);
@@ -154,7 +156,9 @@ const displayLikedPosts = () => {
 
 const displayReportedPosts = () => {
   const reportedPosts = getReportedPosts();
-  posts.forEach((post) => {
+  // remove dublicate reported cart
+  document.getElementById("reported").textContent = "";
+  reportedPosts.forEach((post) => {
     const div = createPost(post);
     document.getElementById("reported").appendChild(div);
   });
