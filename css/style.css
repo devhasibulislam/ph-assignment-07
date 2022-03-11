@@ -259,7 +259,7 @@ img {
 
 .question{
   max-width: 600px;
-  border: 1px solid black;
   margin: 20px auto;
-  padding: 0 5px;
+  padding: 20px 5px;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
 }
